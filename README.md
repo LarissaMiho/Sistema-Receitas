@@ -34,3 +34,8 @@ Notar que Gerenciar Ingredientes refere-se a: inserir, alterar, buscar e remover
 mesmo se aplica às receitas. Além disso, não deve ser possível criar uma receita com um
 ingrediente não cadastrado nem tampouco remover um ingrediente caso esse esteja presente
 em pelo menos uma receita.
+
+# Build
+1. Abrir o terminal no diretório do projeto.
+2. Digitar "gradle tomcatRun"e dar Enter.
+3. Acessar no navegador "localhost:8080/labES"
