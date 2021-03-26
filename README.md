@@ -37,5 +37,6 @@ em pelo menos uma receita.
 
 # Build
 1. Abrir o terminal no diretório do projeto.
-2. Digitar "gradle tomcatRun"e dar Enter.
-3. Acessar no navegador "localhost:8080/labES"
+2. Digitar "gradle build" para baixar as dependências.
+3. Digitar "gradle tomcatRun".
+4. Acessar no navegador o link do localhost que o terminal lhe dá quando se roda o comando acima.
