@@ -30,17 +30,17 @@
   </tr>
   <tr>
     <td>1</td>
-    <td><a href="receita.jsp">Bolo de Chocolate</a></td>
-    <td><button  href="teste.jsp" type="button">Remover</button></td>
+    <td><a href="editarReceita.jsp">Bolo de Chocolate</a></td>
+    <td><button   type="button">Remover</button></td>
   </tr>
   <tr>
     <td>2</td>
-    <td><a href="receita.jsp">Torta de Chocolate</a></td>
+    <td><a href="editarReceita.jsp">Torta de Chocolate</a></td>
     <td><button type="button">Remover</button></td>
   </tr>
   <tr>
     <td>3</td>
-    <td><a href="receita.jsp">Chocolate Quente</a></td>
+    <td><a href="editarReceita.jsp">Chocolate Quente</a></td>
     <td><button type="button">Remover</button></td>
   </tr>
 </table>

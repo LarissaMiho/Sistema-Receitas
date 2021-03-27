@@ -13,19 +13,12 @@ import javax.servlet.http.HttpServletResponse;
 /**
  * Servlet implementation class NovaReceitaServlet
  */
-@WebServlet("/labES/receitas")
+@WebServlet("/receitas")
 public class ReceitaController extends HttpServlet {
-	private static final long serialVersionUID = 1L;
-	
-
-	/**
-	 * @see HttpServlet#service(HttpServletRequest request, HttpServletResponse response)
-	 */
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		RequestDispatcher rd = request.getRequestDispatcher("receita.jsp");
-		System.out.println("teste");
+    public void doGet(HttpServletRequest request, HttpServletResponse response)
+            throws IOException, ServletException {
+        response.getWriter().println("Hello");
+        RequestDispatcher rd = request.getRequestDispatcher("receita.jsp");
 		rd.forward(request, response);
-		
-	}
-
+    }
 }

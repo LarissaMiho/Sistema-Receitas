@@ -33,42 +33,53 @@
 			<th>id</th>
 			<th>Nome</th>
 			<th></th>
-			<th></th>
 		</tr>
 		<tr>
 			<td>1</td>
-			<td><input type="text" value="Açucar"></td>
-			<td><button type="button">Salvar</button></td>
+			<td><form action="/action_page.php">
+					<input type="text" value="Açúcar">
+					<button type="button">Salvar</button>
+				</form></td>
 			<td><button type="button">Remover</button></td>
 		</tr>
 		<tr>
 			<td>2</td>
-			<td><input type="text" value="Leite"></td>
-			<td><button type="button">Salvar</button></td>
+			<td><form action="/action_page.php">
+					<input type="text" value="Leite">
+					<button type="button">Salvar</button>
+				</form></td>
 			<td><button type="button">Remover</button></td>
 		</tr>
 		<tr>
 			<td>3</td>
-			<td><input type="text" value="Farinha de Trigo"></td>
-			<td><button type="button">Salvar</button></td>
+			<td><form action="/action_page.php">
+					<input type="text" value="Farinha de Trigo">
+					<button type="button">Salvar</button>
+				</form></td>
 			<td><button type="button">Remover</button></td>
 		</tr>
 		<tr>
 			<td>4</td>
-			<td><input type="text" value="Chocolate"></td>
-			<td><button type="button">Salvar</button></td>
+			<td><form action="/action_page.php">
+					<input type="text" value="Chocolate">
+					<button type="button">Salvar</button>
+				</form></td>
 			<td><button type="button">Remover</button></td>
 		</tr>
 		<tr>
 			<td>5</td>
-			<td><input type="text" value="Fermento"></td>
-			<td><button type="button">Salvar</button></td>
+			<td><form action="/action_page.php">
+					<input type="text" value="Fermento">
+					<button type="button">Salvar</button>
+				</form></td>
 			<td><button type="button">Remover</button></td>
 		</tr>
 		<tr>
 			<td>6</td>
-			<td><input type="text" value="Creme de Leite"></td>
-			<td><button type="button">Salvar</button></td>
+			<td><form action="/action_page.php">
+					<input type="text" value="Creme de Leite">
+					<button type="button">Salvar</button>
+				</form></td>
 			<td><button type="button">Remover</button></td>
 		</tr>
 	</table>
