@@ -1,6 +1,15 @@
 # Sistema-Receitas
 Projeto feito para a aula de Laboratório de Engenharia de Software - 5º semestre de Análise e Desenvolvimento de Sistemas - Fatec São José dos Campos - 2021.
 
+# Link dos videos de demonstração
+Parte 1 - https://youtu.be/Vk0sn9viELE
+
+# Build
+1. Abrir o terminal no diretório do projeto.
+2. Digitar "gradle build" para gerenciar as de dependências e validar para que o projeto seja buildado.
+3. Digitar "gradle tomcatRun" para subir o projeto.
+4. Acessar no navegador o link do localhost que o terminal lhe dá quando se roda o comando acima.
+
 # REQUISITOS E RESTRIÇÕES GERAIS, TECNOLOGIA JAVA:
 1.Utilizar a linguagem Java (Versão 8 ou superior) no back end;
 2. JPA com provedor Hibernate (5 ou superior) para persistência de dados;
@@ -35,8 +44,4 @@ mesmo se aplica às receitas. Além disso, não deve ser possível criar uma rec
 ingrediente não cadastrado nem tampouco remover um ingrediente caso esse esteja presente
 em pelo menos uma receita.
 
-# Build
-1. Abrir o terminal no diretório do projeto.
-2. Digitar "gradle build" para baixar as dependências.
-3. Digitar "gradle tomcatRun".
-4. Acessar no navegador o link do localhost que o terminal lhe dá quando se roda o comando acima.
+
