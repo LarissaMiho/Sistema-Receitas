@@ -2,7 +2,7 @@
 Projeto feito para a aula de Laboratório de Engenharia de Software - 5º semestre de Análise e Desenvolvimento de Sistemas - Fatec São José dos Campos - 2021.
 
 # Link dos videos de demonstração
-Parte 1 - https://youtu.be/Vk0sn9viELE
+Parte 1 - [video](https://youtu.be/Vk0sn9viELE)
 
 # Build
 1. Abrir o terminal no diretório do projeto.
