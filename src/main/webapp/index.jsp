@@ -14,11 +14,11 @@
 	</ul>
 	<h2>Lista de Ingredientes</h2>
 
-	<form action="/action_page.php">
+	<form onsubmit="return false;">
 		<label for="fname">Adicionar um Ingrediente Novo:</label><br>
-		<br> <label for="fname">Nome do Ingrediente:</label><br> <input
-			type="text" value="Caramelo"><br>
-		<td><button type="button">Adicionar</button></td>
+		<br> <label for="fname">Nome do Ingrediente:</label><br> <input name="nome" id="nomeIngrediente"
+			type="text"><br>
+		<td><button type="button" onClick="salvarIngrediente();">Adicionar</button></td>
 	</form>
 	<br>
 	<br>
@@ -85,4 +85,6 @@
 	</table>
 
 </body>
+<script type="text/javascript" src="../js/ingrediente/ingrediente.js"></script>
+<script type="text/javascript" src="../../js/comum.js"></script>
 </html>

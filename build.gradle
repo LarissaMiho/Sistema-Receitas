@@ -11,11 +11,13 @@ plugins {
     id 'war'
     id 'java'
     id 'org.gretty' version '3.0.3'
+    id 'application'
 }
 
 repositories {
     // Use jcenter for resolving dependencies.
     // You can declare any Maven/Ivy/file repository here.
+    mavenCentral()
     jcenter()
 }
 
@@ -26,6 +28,11 @@ dependencies {
     // This dependency is exported to consumers, that is to say found on their compile classpath.
     // This dependency is used internally, and not exposed to consumers on their own compile classpath.
     implementation 'com.google.guava:guava:28.2-jre'
+    implementation group: 'org.hibernate', name: 'hibernate-core', version: '5.3.7.Final'
+    implementation 'org.mariadb.jdbc:mariadb-java-client:2.1.2'
+    implementation group: 'javax.persistence', name: 'javax.persistence-api', version: '2.2'
+    
+
 
     // Use JUnit test framework
     testImplementation 'junit:junit:4.12'
@@ -34,3 +41,5 @@ dependencies {
 gretty {
 	servletContainer = 'jetty9'
 }
+
+mainClassName='labES.servlet.App'

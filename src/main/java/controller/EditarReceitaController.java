@@ -1,4 +1,4 @@
-package labES.servlet;
+package controller;
 
 public class EditarReceitaController {
 
