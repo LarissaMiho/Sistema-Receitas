@@ -2,15 +2,15 @@ package controller;
 
 import java.io.IOException;
 
-import javax.persistence.EntityManager;
-import javax.persistence.EntityManagerFactory;
-import javax.persistence.Persistence;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+
+import model.Ingrediente;
+import service.IngredientesService;
 
 
 /**
@@ -27,7 +27,20 @@ public class IngredienteController extends HttpServlet{
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		System.out.println("Cadastrando Ingredientes");
 		String nomeIngrediente = request.getParameter("nome");
-		//IngredienteModel ingrediente = new IngredienteModel(null, nomeIngrediente);
+		String idIngrediente = request.getParameter("id");
+		System.out.println(idIngrediente+"-------------------------------------------");
+		Ingrediente ingrediente = null;
+		IngredientesService ingredienteService = new IngredientesService();
+		if(idIngrediente == null) {
+			ingrediente = new Ingrediente(null, nomeIngrediente);
+			ingredienteService.criar(ingrediente);
+		}else {
+			ingrediente = new Ingrediente(Long.parseLong(idIngrediente), nomeIngrediente);
+			ingredienteService.editar(ingrediente);
+		}
+		
+		
+		
 		
 		
 		RequestDispatcher rd = request.getRequestDispatcher("index.jsp");
@@ -35,5 +48,6 @@ public class IngredienteController extends HttpServlet{
 		rd.forward(request, response);
 		
 	}
+	
 
 }
