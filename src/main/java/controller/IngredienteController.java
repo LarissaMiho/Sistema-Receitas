@@ -28,14 +28,15 @@ public class IngredienteController extends HttpServlet{
 		System.out.println("Cadastrando Ingredientes");
 		String nomeIngrediente = request.getParameter("nome");
 		String idIngrediente = request.getParameter("id");
+		String quantidadeIngrediente = request.getParameter("quantidade");
 		System.out.println(idIngrediente+"-------------------------------------------");
 		Ingrediente ingrediente = null;
 		IngredientesService ingredienteService = new IngredientesService();
 		if(idIngrediente == null) {
-			ingrediente = new Ingrediente(null, nomeIngrediente);
+			ingrediente = new Ingrediente(null, nomeIngrediente, quantidadeIngrediente);
 			ingredienteService.criar(ingrediente);
 		}else {
-			ingrediente = new Ingrediente(Long.parseLong(idIngrediente), nomeIngrediente);
+			ingrediente = new Ingrediente(Long.parseLong(idIngrediente), nomeIngrediente, quantidadeIngrediente);
 			ingredienteService.editar(ingrediente);
 		}
 		

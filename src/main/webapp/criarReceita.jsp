@@ -14,13 +14,21 @@
 </ul>
 <h2>Criar Receita Nova</h2>
 
-<form action="criarReceita2.jsp">
+<form >
   <label for="fname">Nome da Receita:</label><br>
-  <input type="text" id="fname" name="fname" value="Bolo Simples"><br><br>
+  <input type="text" id="receita-nome" name="nome"><br><br>
   <label for="lname">Modo de Preparo:</label><br>
-  <textarea type="text" id="lname" name="lname" value="Doe"></textarea><br><br>  
-  <input type="submit" value="Avançar">
+  <textarea type="text" id="receita-preparo" name="modoPreparo"></textarea><br><br>  
+  <input type="button" value="Avançar" onclick="avancar()">
 </form>
 
 </body>
+<script>
+	function avancar(){
+		var nome = document.getElementById("receita-nome").value;
+		var preparo = document.getElementById("receita-preparo").value;
+		window.location.href = "./criarReceita2.jsp?nome=" + nome + "&preparo=" + preparo;
+	}
+
+</script>
 </html>

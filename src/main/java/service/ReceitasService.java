@@ -7,43 +7,42 @@ import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
 import javax.persistence.Query;
 
-import model.Ingrediente;
+import model.Receita;
 
-public class IngredientesService {
+public class ReceitasService {
 
-	public void criar(Ingrediente ingrediente) {
-		EntityManagerFactory emf = Persistence.createEntityManagerFactory("ingrediente");        
+	public void criar(Receita receita) {
+		EntityManagerFactory emf = Persistence.createEntityManagerFactory("receita");        
         EntityManager em = emf.createEntityManager();
-        
-        /* Criação Mde uma entidade - CREATE */        
+           
 
         em.getTransaction().begin();
-        em.persist(ingrediente);
+        em.persist(receita);
         em.getTransaction().commit();
         
         em.close();
         emf.close(); 
 	}
 	
-	public void editar(Ingrediente ingrediente) {
-		EntityManagerFactory emf = Persistence.createEntityManagerFactory("ingrediente");        
+	public void editar(Receita receita) {
+		EntityManagerFactory emf = Persistence.createEntityManagerFactory("receita");        
         EntityManager em = emf.createEntityManager();
-          
+           
 
         em.getTransaction().begin();
-        em.merge(ingrediente);
+        em.merge(receita);
         em.getTransaction().commit();
         
         em.close();
         emf.close(); 
 	}
 	
-	public List<Ingrediente> listarTodos() {
-        EntityManagerFactory emf = Persistence.createEntityManagerFactory("ingrediente");
+	public List<Receita> listarTodos() {
+        EntityManagerFactory emf = Persistence.createEntityManagerFactory("receita");
         EntityManager em = emf.createEntityManager();
-        String hql = "SELECT i FROM ingrediente i";
+        String hql = "SELECT i FROM receita i";
         Query query = em.createQuery(hql);
-        List<Ingrediente> results = query.getResultList();
+        List<Receita> results = query.getResultList();
         em.close();
         emf.close();
         return results;

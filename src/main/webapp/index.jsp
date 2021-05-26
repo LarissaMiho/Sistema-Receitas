@@ -18,11 +18,13 @@
 	<h2>Lista de Ingredientes</h2>
 
 	<form action="/labES/ingredientes" method="post">
-        <label for="fname">Adicionar um Ingrediente Novo:</label><br>
-        <br> <label for="fname">Nome do Ingrediente:</label><br> <input name="nome" id="nomeIngrediente"
-            type="text"><br>
-        <td><button type="submit">Adicionar</button></td>
-    </form>
+		<label for="fname">Adicionar um Ingrediente Novo:</label><br> <br>
+		<label for="fname">Nome do Ingrediente:</label><br> <input
+			name="nome" id="nomeIngrediente" type="text"><br> <label
+			for="fname">Quantidade do Ingrediente:</label><br> <input
+			name="quantidade" id="quantidadeIngrediente" type="text"><br>
+		<td><button type="submit">Adicionar</button></td>
+	</form>
 	<br>
 	<br>
 	<form action="/action_page.php">
@@ -35,22 +37,33 @@
 		<tr>
 			<th>id</th>
 			<th>Nome</th>
+			<th>Quantidade</th>
+			<th></th>
 			<th></th>
 		</tr>
-		<%IngredientesService ingredientesService = new IngredientesService();
+		<%
+		IngredientesService ingredientesService = new IngredientesService();
 		List<Ingrediente> ingredientes = ingredientesService.listarTodos();
-		for(Ingrediente ingrediente:ingredientes){%>
-		<tr>
+		for (Ingrediente ingrediente : ingredientes) {
+		%>
 		<form action="/labES/ingredientes" method="post">
-			<td><input readonly="readonly" style="width:10px" type="text" name="id" value="<%=ingrediente.getId()%>"></td>
-			<td>
-					<input type="text" name="nome" value="<%=ingrediente.getNome()%>"/>
+			<tr>
+				<td><input readonly="readonly" style="width: 16px" type="text"
+					name="id" value="<%=ingrediente.getId()%>"></td>
+				<td><input type="text" name="nome"
+					value="<%=ingrediente.getNome()%>" /></td>
+				<td><input type="text" name="quantidade"
+					value="<%=ingrediente.getQuantidade() != null ? ingrediente.getQuantidade() : ""%>" />
+				</td>
+				<td>
 					<button type="submit">Salvar</button>
 				</td>
-			</form>
-			<td><button type="button">Remover</button></td>
-		</tr>
-		<% }%>
+				<td><button disabled="disabled" type="button">Remover</button></td>
+			</tr>
+		</form>
+		<%
+		}
+		%>
 	</table>
 
 </body>
