@@ -8,32 +8,33 @@ import javax.persistence.Persistence;
 import javax.persistence.Query;
 
 import model.Ingrediente;
+import model.IngredienteReceita;
 
-public class IngredientesService {
+public class IngredienteReceitaService {
 	EntityManagerFactory emf = null;
 	EntityManager em = null;
 	
-	public IngredientesService() {
+	public IngredienteReceitaService() {
 		emf = Persistence.createEntityManagerFactory("labes");        
         em = emf.createEntityManager();
 	}
 
-	public void criar(Ingrediente ingrediente) {
+	public void criar(IngredienteReceita ingredienteReceita) {
 	
         /* Criação Mde uma entidade - CREATE */        
 
         em.getTransaction().begin();
-        em.persist(ingrediente);
+        em.persist(ingredienteReceita);
         em.getTransaction().commit();
         
         em.close();
         emf.close(); 
 	}
 	
-	public void editar(Ingrediente ingrediente) {
+	public void editar(IngredienteReceita ingredienteReceita) {
 
         em.getTransaction().begin();
-        em.merge(ingrediente);
+        em.merge(ingredienteReceita);
         em.getTransaction().commit();
         
         em.close();
@@ -41,7 +42,7 @@ public class IngredientesService {
 	}
 	
 	public Ingrediente encontrarPorId(Long id) {
-        String hql = "SELECT i FROM Ingrediente i WHERE i.id = " + id;
+        String hql = "SELECT i FROM IngredienteReceita i WHERE i.id = " + id;
         Query query = em.createQuery(hql);
         Ingrediente results = (Ingrediente) query.getResultList().get(0);
         em.close();
@@ -50,7 +51,7 @@ public class IngredientesService {
     }
 
 	public List<Ingrediente> listarTodos() {
-        String hql = "SELECT i FROM Ingrediente i";
+        String hql = "SELECT i FROM IngredienteReceita i";
         Query query = em.createQuery(hql);
         List<Ingrediente> results = query.getResultList();
         em.close();

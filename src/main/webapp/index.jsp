@@ -20,9 +20,7 @@
 	<form action="/labES/ingredientes" method="post">
 		<label for="fname">Adicionar um Ingrediente Novo:</label><br> <br>
 		<label for="fname">Nome do Ingrediente:</label><br> <input
-			name="nome" id="nomeIngrediente" type="text"><br> <label
-			for="fname">Quantidade do Ingrediente:</label><br> <input
-			name="quantidade" id="quantidadeIngrediente" type="text"><br>
+			name="nome" id="nomeIngrediente" type="text"><br><br>
 		<td><button type="submit">Adicionar</button></td>
 	</form>
 	<br>
@@ -37,7 +35,6 @@
 		<tr>
 			<th>id</th>
 			<th>Nome</th>
-			<th>Quantidade</th>
 			<th></th>
 			<th></th>
 		</tr>
@@ -52,9 +49,6 @@
 					name="id" value="<%=ingrediente.getId()%>"></td>
 				<td><input type="text" name="nome"
 					value="<%=ingrediente.getNome()%>" /></td>
-				<td><input type="text" name="quantidade"
-					value="<%=ingrediente.getQuantidade() != null ? ingrediente.getQuantidade() : ""%>" />
-				</td>
 				<td>
 					<button type="submit">Salvar</button>
 				</td>

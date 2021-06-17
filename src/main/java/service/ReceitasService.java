@@ -11,24 +11,26 @@ import model.Receita;
 
 public class ReceitasService {
 
-	public void criar(Receita receita) {
-		EntityManagerFactory emf = Persistence.createEntityManagerFactory("receita");        
-        EntityManager em = emf.createEntityManager();
-           
-
+	EntityManagerFactory emf = null;
+	EntityManager em = null;
+	
+	public ReceitasService() {
+		emf = Persistence.createEntityManagerFactory("labes");        
+        em = emf.createEntityManager();
+	}
+		
+	
+	public  Receita criar(Receita receita) {
         em.getTransaction().begin();
         em.persist(receita);
         em.getTransaction().commit();
         
         em.close();
         emf.close(); 
+        return receita;
 	}
 	
 	public void editar(Receita receita) {
-		EntityManagerFactory emf = Persistence.createEntityManagerFactory("receita");        
-        EntityManager em = emf.createEntityManager();
-           
-
         em.getTransaction().begin();
         em.merge(receita);
         em.getTransaction().commit();
@@ -38,8 +40,6 @@ public class ReceitasService {
 	}
 	
 	public List<Receita> listarTodos() {
-        EntityManagerFactory emf = Persistence.createEntityManagerFactory("receita");
-        EntityManager em = emf.createEntityManager();
         String hql = "SELECT i FROM receita i";
         Query query = em.createQuery(hql);
         List<Receita> results = query.getResultList();

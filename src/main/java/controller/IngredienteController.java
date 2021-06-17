@@ -33,10 +33,10 @@ public class IngredienteController extends HttpServlet{
 		Ingrediente ingrediente = null;
 		IngredientesService ingredienteService = new IngredientesService();
 		if(idIngrediente == null) {
-			ingrediente = new Ingrediente(null, nomeIngrediente, quantidadeIngrediente);
+			ingrediente = new Ingrediente(null, nomeIngrediente);
 			ingredienteService.criar(ingrediente);
 		}else {
-			ingrediente = new Ingrediente(Long.parseLong(idIngrediente), nomeIngrediente, quantidadeIngrediente);
+			ingrediente = new Ingrediente(Long.parseLong(idIngrediente), nomeIngrediente);
 			ingredienteService.editar(ingrediente);
 		}
 		

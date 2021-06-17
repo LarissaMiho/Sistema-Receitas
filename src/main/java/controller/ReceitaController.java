@@ -1,7 +1,6 @@
 package controller;
 
 import java.io.IOException;
-import java.util.List;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -12,6 +11,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import model.Ingrediente;
 import model.Receita;
+import service.IngredientesService;
 import service.ReceitasService;
 
 
@@ -34,9 +34,11 @@ public class ReceitaController extends HttpServlet {
 		Receita receita = null;
 		
 		ReceitasService receitaService = new ReceitasService();
+		Ingrediente ingrediente = null;
+		IngredientesService ingredientesService = new IngredientesService();
 		if(idReceita == null) {
 			receita = new Receita(null, nomeReceita, modoPreparo);
-			receitaService.criar(receita);
+			receita = receitaService.criar(receita);
 		}else {
 			receita = new Receita(Long.parseLong(idReceita), nomeReceita, modoPreparo);
 			receitaService.editar(receita);

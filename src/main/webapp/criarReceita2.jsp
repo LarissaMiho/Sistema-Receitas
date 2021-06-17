@@ -40,7 +40,7 @@
 		var tableString = "<tr><th>Nome</th><th>Quantidade</th><th></th></tr>";
 		for (var i = 0; i < listaIngrediente.length; i++) {
 			tableString += "<tr>" + "<td><label>"
-					+ listaIngrediente[i].nome.split(" | ")[0]
+					+ listaIngrediente[i].nome
 					+ "</label><br></td>" + "<td><label>"
 					+ listaIngrediente[i].nome.split(" | ")[1]
 					+ "</label><br></td> "
@@ -87,7 +87,7 @@
 			List<Ingrediente> ingredientes = ingredientesService.listarTodos();
 			for (Ingrediente ingrediente : ingredientes) {
 			%>
-			<option value="<%=ingrediente.getId()%>"><%=ingrediente.getNome() + " | " + ingrediente.getQuantidade()%></option>
+			<option value="<%=ingrediente.getId()%>"><%=ingrediente.getNome()%></option>
 			<%
 			}
 			%>
@@ -103,11 +103,6 @@
 			<th>Nome</th>
 			<th>Quantidade</th>
 			<th></th>
-		</tr>
-		<tr>
-			<td><label for="lname">Açucar</label><br></td>
-			<td><label for="lname">200g</label><br></td>
-			<td><button type="button">Remover</button></td>
 		</tr>
 
 	</table>
