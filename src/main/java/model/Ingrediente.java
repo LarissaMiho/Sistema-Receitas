@@ -5,6 +5,7 @@ import java.util.List;
 import javax.persistence.Basic;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -32,7 +33,7 @@ public class Ingrediente implements Serializable {
 	private Long id;
 	@Column(name = "nome")
 	private String nome;
-	@OneToMany(mappedBy = "ingrediente")
+	@OneToMany(mappedBy = "ingrediente", fetch = FetchType.EAGER)
 	private List<IngredienteReceita> ingredienteReceitaList;
 
 	public Ingrediente(Long id, String nome) {

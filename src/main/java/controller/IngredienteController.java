@@ -32,7 +32,7 @@ public class IngredienteController extends HttpServlet{
 		System.out.println(idIngrediente+"-------------------------------------------");
 		Ingrediente ingrediente = null;
 		IngredientesService ingredienteService = new IngredientesService();
-		if(idIngrediente == null) {
+		if(idIngrediente == null || idIngrediente.equals("")) {
 			ingrediente = new Ingrediente(null, nomeIngrediente);
 			ingredienteService.criar(ingrediente);
 		}else {

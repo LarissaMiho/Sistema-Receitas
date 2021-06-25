@@ -3,8 +3,10 @@ package model;
 import java.io.Serializable;
 import java.util.List;
 import javax.persistence.Basic;
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -35,7 +37,7 @@ public class Receita implements Serializable {
 	private String nome;
 	@Column(name = "modo_preparo")
 	private String modoPreparo;
-	@OneToMany(mappedBy = "receita")
+	@OneToMany(mappedBy = "receita", fetch = FetchType.EAGER, cascade=CascadeType.REMOVE)
 	private List<IngredienteReceita> ingredienteReceitaList;
 
 	public Receita(Long id, String nome, String modoPreparo) {
