@@ -3,8 +3,10 @@ Projeto feito para a aula de Laboratório de Engenharia de Software - 5º semest
 
 # Link dos videos de demonstração
 Parte 1 - [video](https://youtu.be/Vk0sn9viELE)
+
 Parte 2 - [video](https://youtu.be/wD9lGRbuAK4)
-última Parte / Recuperação - [video](https://youtu.be/rkdGGwd9zsw)
+
+Última Parte / Recuperação - [video](https://youtu.be/rkdGGwd9zsw)
 
 # Build
 1. Abrir o terminal no diretório do projeto.
